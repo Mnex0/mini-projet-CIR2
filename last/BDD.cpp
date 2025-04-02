@@ -23,17 +23,15 @@ Plan BDD::selectPlan(int id)
 {
     sql::Statement *stmt = con->createStatement();
     sql::ResultSet *res = stmt->executeQuery(
-    "select * from plan where id_plan=" + std::to_string(id));
+        "select * from plan where =" + std::to_string(id));
     res->next();
     Carte carte(res->getInt(1), res->getString(2),
-    res->getInt(1), res->getDouble(2), res->getDoble(3));
+                res->getInt(1), res->getDouble(2), res->getDoble(3));
     delete res;
     delete stmt;
 
     return contour;
 }
-
-
 
 Carte BDD::getCarte()
 {
@@ -46,25 +44,8 @@ Carte BDD::getCarte()
 
 void BDD::ajouterPointsContour(Carte &carte)
 {
-    "select * from contour order by num_pt"
-    while (res->next())
+    "select * from contour order by num_pt" while (res->next())
     {
-        Point pt(res->getInt(1), res->getDouble(2), res->getDoble(3)); //lat,long
+        Point pt(res->getInt(1), res->getDouble(2), res->getDoble(3)); // lat,long
     }
 }
-
-int main()
-{
-    Carte carte;
-    try
-    {
-        BDD bdd("hote", ......);
-        carte = bdd.getCarte();
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    return 0;
-}
-
