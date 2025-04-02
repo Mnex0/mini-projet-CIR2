@@ -39,7 +39,9 @@ Carte BDD::getCarte()
 {
     Carte carte;
     //......
-    this->ajouterP
+    this->ajouterPointsContour(carte.getContour());
+    //......
+    return carte;
 }
 
 void BDD::ajouterPointsContour(Carte &carte)
