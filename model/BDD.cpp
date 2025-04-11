@@ -19,14 +19,13 @@ BDD::~BDD()
     delete con;
 }
 
-Plan BDD::selectPlan(int id)
+Contour BDD::getContour(int id)
 {
     sql::Statement *stmt = con->createStatement();
     sql::ResultSet *res = stmt->executeQuery(
         "select * from plan where =" + std::to_string(id));
     res->next();
-    Carte carte(res->getInt(1), res->getString(2),
-                res->getInt(1), res->getDouble(2), res->getDoble(3));
+    Carte carte(res->getInt(1), res->getDouble(2), res->getDouble(3));
     delete res;
     delete stmt;
 

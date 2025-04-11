@@ -3,7 +3,7 @@ int main()
     Carte carte;
     try
     {
-        BDD bdd("hote", ......);
+        BDD bdd("localhost", ......);
         carte = bdd.getCarte();
     }
     catch (const std::exception &e)

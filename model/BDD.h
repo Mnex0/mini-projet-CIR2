@@ -1,9 +1,7 @@
-
 #include <iostream>
 #include <string>
 #include <vector>
 #include <clocale>
-
 #include <cppconn/driver.h>
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
