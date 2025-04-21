@@ -3,10 +3,16 @@
 class PointContour
 {
 public:
-    PointContour(float lon, float lat);
-    ~PointContour() {};
+    PointContour(double lon, double lat)
+    {
+        this->lon = lon;
+        this->lat = lat;
+    }
+    ~PointContour() {}
+    double getLon() const { return this->lon; }
+    double getLat() const { return this->lat; }
 
 private:
-    float lon;
-    float lat;
+    double lon;
+    double lat;
 };

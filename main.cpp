@@ -1,14 +1,19 @@
-int main()
-{
-    Carte carte;
-    try
-    {
-        BDD bdd("localhost", ......);
-        carte = bdd.getCarte();
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    return 0;
+
+#include <QApplication>
+#include <QMessageBox>
+#include "FenetrePrincipale.h"
+
+
+int main(int argc, char * argv[]) {
+    QApplication app(argc, argv);
+	
+	Carte carte;
+	FenetrePrincipale mw (carte);
+	mw.show();
+
+	mw.dessinerContour();
+	mw.dessinerVilles();
+	mw.dessinerRoutes();
+
+	return app.exec();
 }

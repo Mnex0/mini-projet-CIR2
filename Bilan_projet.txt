@@ -1,0 +1,11 @@
+IA utilisée pour corriger des erreurs difficiles à repérer.
+Pas de copier-coller.
+
+Difficultés rencontrées :
+
+
+1 - De la BDD au code C++/Qt
+
+Lors du parcours des lignes renvoyées par les requêtes SQL, il y avait une erreur qui avait pour conséquence la prise de seulement
+une donnée sur deux dans les données renvoyées par la requête SQL, car dans la boucle "while(res->next())" il y avait une autre ligne "res->next()", ce qui faisait parcourir deux lignes de la réponse MySQL en même temps plutôt qu'une seule, il y avait donc la moitié des villes, des routes et des waypoints, ce qui créait des erreurs avec la fonction getVilleByName() qui rencoyait des nullptr la moitié du temps.
+
